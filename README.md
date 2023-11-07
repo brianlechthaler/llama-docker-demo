@@ -6,6 +6,7 @@ Please keep in mind that this is not a "reference implementation", and should ne
 * NVIDIA Container Toolkit
 * At least 140GB VRAM (on one or more GPUs)
 * NVIDIA Drivers and CUDA
+* An LLM converted to `gguf` format, such as Llama 2 converted using the `convert.py` script in this repository: https://github.com/ggerganov/llama.cpp
 
 ## Quickstart
 1. Clone this repository: `git clone https://github.com/brianlechthaler/llama-docker-demo.git`

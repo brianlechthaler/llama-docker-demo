@@ -23,4 +23,4 @@ RUN CMAKE_ARGS="-DLLAMA_CUBLAS=on" pip install llama-cpp-python
 RUN mkdir -p /opt/runtime
 COPY main.py /opt/runtime
 WORKDIR /opt/runtime
-CMD python3 main.py
+ENTRYPOINT ["python3","main.py"]

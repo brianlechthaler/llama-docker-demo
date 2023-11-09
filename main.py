@@ -1,5 +1,6 @@
 from llama_cpp import Llama
 from sys import argv
+from os import environ
 
 class InferMixins:
     def load_model(self,model_path: str = '/var/model/ggml-model-f16.gguf', gpu: bool = True):
@@ -30,5 +31,8 @@ class InferMain(InferMixins):
 
 if __name__ == '__main__':
     x = InferMain()
-    x.run_prompt(argv[1])
+    if len(argv) > 1:
+        x.run_prompt(argv[1])
+    if len(argv) < 1:
+        x.run_prompt(environ['PROMPT'])
     x.stream_output()

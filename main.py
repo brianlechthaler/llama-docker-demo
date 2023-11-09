@@ -33,6 +33,6 @@ if __name__ == '__main__':
     x = InferMain()
     if len(argv) > 1:
         x.run_prompt(argv[1])
-    if len(argv) < 1:
+    if environ.prompt:
         x.run_prompt(environ['PROMPT'])
     x.stream_output()

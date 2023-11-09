@@ -31,8 +31,12 @@ class InferMain(InferMixins):
 
 if __name__ == '__main__':
     x = InferMain()
+    prompt_run = False
     if len(argv) > 1:
         x.run_prompt(argv[1])
+        prompt_run = True
     if environ.prompt:
         x.run_prompt(environ['PROMPT'])
-    x.stream_output()
+        prompt_run = True
+    if prompt_run:
+        x.stream_output()

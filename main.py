@@ -39,6 +39,6 @@ if __name__ == '__main__':
         x.run_prompt(environ['PROMPT'])
         prompt_run = True
     if prompt_run is False:
-        raise Exception('No prompt specified')
+        raise Exception('No prompt specified. Please specify a prompt using a command line argument or the PROMPT environment variable.')
     if prompt_run is True:
         x.stream_output()

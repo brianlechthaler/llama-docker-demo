@@ -35,8 +35,10 @@ if __name__ == '__main__':
     if len(argv) > 1:
         x.run_prompt(argv[1])
         prompt_run = True
-    if environ.prompt:
+    if prompt_run is False:
         x.run_prompt(environ['PROMPT'])
         prompt_run = True
-    if prompt_run:
+    if prompt_run is False:
+        raise Exception('No prompt specified')
+    if prompt_run is True:
         x.stream_output()

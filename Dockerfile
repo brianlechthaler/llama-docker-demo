@@ -2,8 +2,7 @@ FROM ghcr.io/coreweave/ml-containers/torch:29c37fa-nccl-cuda12.1.1-nccl2.18.3-1-
 
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y git build-essential \
-    python3 python3-pip gcc wget\
-    && mkdir -p /etc/OpenCL/vendors && echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
+    python3 python3-pip gcc wget
 
 COPY . .
 

@@ -9,9 +9,10 @@ hardcoded_model_author: str = 'meta-llama'
 
 
 snapshot_download(
-    repo_id=hardcoded_model,
-    revision=f"{hardcoded_model_author}/{hardcoded_model}"
+    revision=hardcoded_version,
+    repo_id=f"{hardcoded_model_author}/{hardcoded_model}"
 )
+
 
 symlink(
     src=f"/home/{getuser()}/.cache/huggingface/hub/models--{hardcoded_model_author}--{hardcoded_model}/snapshots/{hardcoded_version}",
